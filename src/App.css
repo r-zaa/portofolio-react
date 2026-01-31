@@ -446,7 +446,7 @@ footer {
   font-size: 0.85rem;
   /* kecil tapi masih kebaca */
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--text);
 }
 
 .project-desc .label {

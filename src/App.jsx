@@ -244,7 +244,7 @@ export default function App() {
                 </a>
 
                 <a
-                  href="/documents/cv_dev.pdf"
+                  href="./document/cv_dev.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn ghost"
@@ -480,7 +480,7 @@ export default function App() {
               transition={{ duration: 0.6 }}
             >
               <img
-                src="/images/new.png"
+                src="./images/new.png"
                 alt="Cinematic Portfolio Preview"
               />
             </Motion.div>
