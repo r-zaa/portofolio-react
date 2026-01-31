@@ -9,7 +9,7 @@ export const skills = [
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
   },
   {
-    name: "CodeIgniter 3",
+    name: "CodeIgniter",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeigniter/codeigniter-plain.svg"
   },
   {
