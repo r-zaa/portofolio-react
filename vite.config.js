@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/' // HARUS sama dengan nama repo
+  base: '/portfolio-react/' // HARUS sama dengan nama repo
 })
