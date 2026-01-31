@@ -117,6 +117,7 @@ body {
 .container {
   max-width: 1200px;
   margin: auto;
+  margin-top: 100px;
 }
 
 /* TITLES */
@@ -279,8 +280,13 @@ footer {
 
 /* ===== NAVBAR REFINEMENT ===== */
 .nav {
-  position: sticky;
-  top: 0;
+  /* position: sticky; */
+  position: fixed;
+  /* top: 0; */
+  top: 0;           /* di posisi paling atas */
+  left: 0;
+  width: 100%;      /* full width */
+  z-index: 1000; 
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -289,7 +295,7 @@ footer {
   /* ⬅️ lebih lega */
   gap: 32px;
   /* ⬅️ jarak antar blok */
-  position: relative;
+  /* position: relative; */
   /* ⬅️ TAMBAH INI */
 
   backdrop-filter: blur(16px);
@@ -694,6 +700,12 @@ footer {
       font-size: 1.6rem;
       text-align: center;
     }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      margin-top: 30px;
+    }
+    
 
     /* NAV */
     .nav {

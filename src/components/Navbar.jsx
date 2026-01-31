@@ -3,7 +3,7 @@ export default function Navbar({ dark, setDark }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="nav cinematic-nav">
+    <nav className="nav cinematic-nav fixed top-0 left-0 w-full z-50">
       <h3 className="logo gradient-text">Muhammad Fahreza Saidasmawan</h3>
 
       <div className={`nav-links ${menuOpen ? "open" : ""}`}>
