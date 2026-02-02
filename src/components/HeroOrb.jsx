@@ -2,7 +2,6 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Float } from "@react-three/drei";
 import { useRef } from "react";
 
-/* ===== Ring (orbit) ===== */
 function Ring({ rotation }) {
   return (
     <mesh rotation={rotation} scale={[1.6, 1, 1]}>
@@ -16,7 +15,6 @@ function Ring({ rotation }) {
   );
 }
 
-/* ===== React Logo Pure Geometry ===== */
 function ReactLogoPure() {
   const ref = useRef();
 
@@ -30,7 +28,6 @@ function ReactLogoPure() {
       <Ring rotation={[Math.PI / 3, 0, 0]} />
       <Ring rotation={[0, Math.PI / 3, 0]} />
 
-      {/* Atom tengah */}
       <mesh>
         <sphereGeometry args={[0.22, 32, 32]} />
         <meshStandardMaterial
@@ -43,7 +40,6 @@ function ReactLogoPure() {
   );
 }
 
-/* ===== Hero Orb Canvas ===== */
 export default function HeroOrb() {
   return (
     <Canvas camera={{ position: [0, 0, 8], fov: 45 }}>

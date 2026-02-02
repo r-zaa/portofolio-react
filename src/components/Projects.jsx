@@ -1,33 +1,29 @@
 import { motion as Motion } from "framer-motion";
+import { useLanguage } from "../context/useLanguage";
 import { projects } from "../data/project";
 
 const projectsContainer = {
   hidden: {},
   visible: {
-    transition: {
-      staggerChildren: 0.18,
-    },
+    transition: { staggerChildren: 0.18 },
   },
 };
 
+
 const projectItem = {
-  hidden: {
-    opacity: 0,
-    y: 40,
-    scale: 0.95,
-  },
+  hidden: { opacity: 0, y: 40, scale: 0.95 },
   visible: {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
+    transition: { duration: 0.6, ease: "easeOut" },
   },
 };
 
 export default function Projects() {
+  const { t, lang } = useLanguage();
+  
+console.log("LANG:", lang);
   return (
     <section id="projects" className="section">
       <Motion.div
@@ -37,7 +33,7 @@ export default function Projects() {
         whileInView="visible"
         viewport={{ once: false, amount: 0.3 }}
       >
-        <h2 className="section-title">Projects</h2>
+        <h2 className="section-title">{t.projects.title}</h2>
 
         <div className="projects-grid perspective">
           {projects.map((p, i) => (
@@ -49,26 +45,30 @@ export default function Projects() {
             >
               <div className="project-glow-layer" />
 
-              {/* TEXT */}
               <div className="project-content">
                 <h3>{p.title}</h3>
 
                 <p className="project-desc">
-                  <span className="label">Problem:</span> {p.problem}
+                  <span className="label">
+                    {t.projects.problemLabel}:
+                  </span>{" "}
+                  {p.problem[lang]}
                 </p>
 
                 <p className="project-desc">
-                  <span className="label">Solution:</span> {p.solution}
+                  <span className="label">
+                    {t.projects.solutionLabel}:
+                  </span>{" "}
+                  {p.solution[lang]}
                 </p>
 
                 <div className="tech-stack">
-                  {p.tech.map((t, idx) => (
-                    <span key={idx}>{t}</span>
+                  {p.tech.map((tech, idx) => (
+                    <span key={idx}>{tech}</span>
                   ))}
                 </div>
               </div>
 
-              {/* IMAGE */}
               <div className="project-media">
                 <img
                   src={p.image}

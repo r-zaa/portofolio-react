@@ -1,13 +1,15 @@
 import { motion as Motion } from "framer-motion";
+import { useLanguage } from "../context/useLanguage";
 
 export default function FeaturedProject() {
+  const { t } = useLanguage();
+
   return (
-    <section className="section story-visual">
+    <section className="section story-visual" id="featured">
       <div className="container">
-        <h2 className="section-title">Featured Project</h2>
+        <h2 className="section-title">{t.featuredProject.title}</h2>
 
         <div className="featured-grid">
-          {/* IMAGE */}
           <Motion.div
             className="featured-image glass"
             initial={{ opacity: 0, x: -40 }}
@@ -16,12 +18,11 @@ export default function FeaturedProject() {
             viewport={{ once: false, amount: 0.4 }}
           >
             <img
-              src="./images/new.png"
-              alt="Cinematic Portfolio Preview"
+              src="./images/pgift.gif"
+              alt={t.featuredProject.projectTitle}
             />
           </Motion.div>
 
-          {/* CONTENT */}
           <Motion.div
             className="featured-content"
             initial={{ opacity: 0, x: 40 }}
@@ -29,27 +30,20 @@ export default function FeaturedProject() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: false, amount: 0.4 }}
           >
-            <h3>Portofolio Web Sinematik</h3>
+            <h3>{t.featuredProject.projectTitle}</h3>
 
-            <p>
-              Sinematik React portfolio yang dirancang sebagai media utama
-              personal branding, menampilkan animasi halus, parallax scrolling,
-              dan aksen 3D untuk menciptakan pengalaman visual yang imersif dan
-              profesional.
-            </p>
+            <p>{t.featuredProject.description}</p>
 
             <ul className="feature-points">
-              <li>Fokus pada UI/UX modern & storytelling visual</li>
-              <li>Animasi interaktif dengan Framer Motion</li>
-              <li>Struktur komponen rapi & scalable</li>
-              <li>Representasi kualitas kerja frontend</li>
+              {t.featuredProject.points.map((point, index) => (
+                <li key={index}>{point}</li>
+              ))}
             </ul>
 
             <div className="tech-stack">
-              <span>React</span>
-              <span>Framer Motion</span>
-              <span>Tailwind</span>
-              <span>Vite</span>
+              {t.featuredProject.tech.map((tech, index) => (
+                <span key={index}>{tech}</span>
+              ))}
             </div>
           </Motion.div>
         </div>

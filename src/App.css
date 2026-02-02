@@ -20,6 +20,7 @@ body,
   ;
   --bg-soft: #020617;
   --text: #e5e7eb;
+  --text-o: #000000;
   --muted: #94a3b8;
   --card: #020617;
   --accent: #38bdf8;
@@ -39,6 +40,7 @@ body,
   ;
   --bg-soft: #e2e8f0;
   --text: #0f172a;
+  --text-o: #ffffff;
   --muted: #000000;
   --card: #ffffff;
   --accent: #072f43;
@@ -143,53 +145,35 @@ body {
 
 
 .skill-card {
-  /* Pastikan container adalah flex */
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* Pusatkan vertikal */
   justify-content: center;
-  /* Pusatkan horizontal */
-
-  /* Ukuran lingkaran */
   width: 120px;
-  /* Sesuaikan ukuran yang kamu mau */
   height: 120px;
   border-radius: 50%;
   aspect-ratio: 1 / 1;
-
-  /* Background & Glass Effect */
   background: var(--bgskils);
   backdrop-filter: blur(5px);
   border: 1px solid var(--bskils);
   margin: 0 auto;
-  /* Agar kartu di tengah kolom grid */
 }
 
 .skill-card img {
-  /* Perkecil gambar agar tidak menyentuh tepi */
   max-width: 60%;
   max-height: 60%;
   object-fit: contain;
   display: block;
-  /* Menghilangkan whitespace di bawah gambar */
 }
 
-/* EFEK HOVER (Neon Menyala) */
 .skill-card:hover {
   background: var(--bskilso);
   border-color: rgba(0, 255, 255, 0.5);
-
-  /* Efek cahaya neon lebih kuat saat hover */
   box-shadow:
     0 0 15px rgba(0, 255, 255, 0.4),
     0 0 30px rgba(0, 255, 255, 0.2);
-
-  /* Sedikit memutar icon saat hover (opsional) */
   transform: translateY(-100px);
 }
-
-
 
 /* PROJECTS */
 .projects-grid {
@@ -239,7 +223,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-
   opacity: 0;
   transform: scale(0.92);
   transition: all 0.5s ease;
@@ -280,46 +263,30 @@ footer {
 
 /* ===== NAVBAR REFINEMENT ===== */
 .nav {
-  /* position: sticky; */
   position: fixed;
-  /* top: 0; */
   top: 0;
-  /* di posisi paling atas */
   left: 0;
   width: 100%;
-  /* full width */
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   padding: 20px 48px;
-  /* ⬅️ lebih lega */
   gap: 32px;
-  /* ⬅️ jarak antar blok */
-  /* position: relative; */
-  /* ⬅️ TAMBAH INI */
-
   backdrop-filter: blur(16px);
   background: var(--bnav);
   z-index: 10;
 }
 
 .btn.ghost {
-
-
-    /* alignItems: "center"; */
-    gap: "8px";
-    padding: "10px 20px";
-    border: "2px solid #38bdf8";
-    /* borderRadius: "8px"; */
-    color: "#38bdf8";
-    /* textDecoration: "none"; */
-    /* fontWeight: "100"; */
-    
-    transition: "all 0.3s ease";
-
+  gap: "8px";
+  padding: "10px 20px";
+  border: "2px solid #38bdf8";
+  /* color: "#38bdf8"; */
+  transition: "all 0.3s ease";
 }
+
 .email-btn {
   display: inline-flex;
   align-items: center;
@@ -372,7 +339,6 @@ footer {
   position: relative;
 }
 
-/* subtle underline hover */
 .nav-links a::after {
   content: "";
   position: absolute;
@@ -400,28 +366,34 @@ footer {
 }
 
 .theme-btn,
-.menu-btn {
+.lang-btn {
   width: 50px;
   height: 50px;
-
-
   display: grid;
   place-items: center;
-
   font-size: 1.1rem;
   background: transparent;
   color: var(--text);
   /* border: 1px solid rgba(255, 255, 255, 0.08); */
-
   cursor: pointer;
   transition: transform 0.25s ease, background 0.25s ease;
 }
 
+/* Hide hamburger on desktop */
+.menu-btn {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 .theme-btn:hover,
-.menu-btn:hover {
+.lang-btn:hover {
   transform: translateY(-2px);
   background: var(--card);
 }
+
 
 .featured-image {
   max-width: 520px;
@@ -435,12 +407,12 @@ footer {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top;
 }
 
 .featured-grid {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
-  /* image kiri lebih kecil */
   gap: 3rem;
   align-items: center;
 }
@@ -457,7 +429,6 @@ footer {
 
 .feature-points {
   margin: 1.0rem 0;
-  /* list-style: none; */
 }
 
 .feature-points li {
@@ -482,7 +453,6 @@ footer {
   position: absolute;
   left: 0;
   color: #7c7cff;
-  /* accent color */
 }
 
 .project-header {
@@ -496,14 +466,12 @@ footer {
 
 .project-icon {
   width: 100%;
-  /* height: 200px; */
   opacity: 0.9;
 }
 
 
 .project-desc {
   font-size: 0.85rem;
-  /* kecil tapi masih kebaca */
   line-height: 1.6;
   color: var(--text);
 }
@@ -599,7 +567,6 @@ footer {
   gap: 3rem;
 }
 
-/* GARIS TENGAH */
 .timeline-line {
   position: absolute;
   left: 50%;
@@ -610,22 +577,18 @@ footer {
   transform: translateX(-50%);
 }
 
-/* ITEM BASE */
 .timeline-item {
   position: relative;
   width: 50%;
   display: flex;
 }
 
-/* ITEM KIRI */
 .timeline-item.left {
   justify-content: flex-end;
   padding-right: 3rem;
   text-align: left;
-  /* ⬅️ INI PENTING */
 }
 
-/* ITEM KANAN */
 .timeline-item.right {
   margin-left: auto;
   justify-content: flex-start;
@@ -654,9 +617,7 @@ footer {
 
 .btn.ghost:hover {
   background-color: var(--muted);
-  /* pake warna border sebagai background */
-  color: var(--text);
-  /* teks + icon jadi putih */
+  color: var(--text-o);
 }
 
 
@@ -682,14 +643,12 @@ footer {
     padding-top: 120px;
   }
 
-  /* GRID MASIH 2 KOLOM TAPI LEBIH SEIMBANG */
   .split {
     grid-template-columns: 1.1fr 0.9fr;
     gap: 3rem;
     align-items: center;
   }
 
-  /* TEKS */
   .hero-title {
     font-size: clamp(2.2rem, 4vw, 2.8rem);
     line-height: 1.25;
@@ -771,7 +730,6 @@ footer {
       top: 100%;
       left: 0;
       width: 100%;
-      /* max-width: 100vw; */
       flex-direction: column;
       gap: 20px;
 
@@ -782,11 +740,26 @@ footer {
       display: none;
     }
 
-    .theme-btn,
-    .menu-btn {
+    .theme-btn {
       width: 42px;
       height: 42px;
       font-size: 1rem;
+    }
+
+    .menu-btn {
+      display: block;
+      width: 42px;
+      height: 42px;
+      font-size: 1rem;
+      background: transparent;
+      color: var(--text);
+      /* border: 1px solid rgba(255, 255, 255, 0.08); */
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+
+    .menu-btn:hover {
+      transform: translateY(-2px);
+      background: var(--card);
     }
 
     .nav-links.open {
@@ -800,21 +773,18 @@ footer {
     /* HERO */
     .hero {
       height: auto;
-      /* min-height: 100vh; */
     }
 
     .hero-inner {
       padding-top: 120px;
     }
 
-    /* GRID JADI 1 KOLOM */
     .split {
       grid-template-columns: 1fr;
       gap: 2.5rem;
       text-align: center;
     }
 
-    /* TEXT CENTER */
     .hero-inner>div:first-child {
       display: flex;
       flex-direction: column;
@@ -900,19 +870,20 @@ footer {
       right: auto;
     }
 
-    /* EXPERIENCE CARD */
     .experience-card {
       padding: 1.2rem;
     }
 
     /* CTA */
-    .cta-title {
-      font-size: 2rem;
+    .cta-actions {
+      flex-direction: row;
+      gap: 8px;
+      padding-right: 10px;
+      padding-left: 10px;
     }
 
-    .cta-actions {
-      flex-direction: column;
-      gap: 0.75rem;
+    .cta-actions .btn {
+      flex: 1;
     }
   }
 

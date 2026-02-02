@@ -1,6 +1,6 @@
 import { useState } from "react";
+import { LanguageProvider } from "./context/LanguageContext";
 import useCursor from "./hooks/useCursor";
-
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -17,14 +17,16 @@ export default function App() {
   return (
     <div className={dark ? "dark" : "light"}>
       <div className="cursor" />
-      <Navbar dark={dark} setDark={setDark} />
-      <Hero />
-      <About />
-      <Experience />
-      <Skills />
-      <FeaturedProject />
-      <Projects />
-      <Footer />
+      <LanguageProvider>
+        <Navbar dark={dark} setDark={setDark} />
+        <Hero />
+        <About />
+        <Experience />
+        <Skills />
+        <FeaturedProject />
+        <Projects />
+        <Footer />
+      </LanguageProvider>
     </div>
   );
 }

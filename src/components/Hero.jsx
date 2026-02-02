@@ -4,8 +4,11 @@ import HeroOrb from "./HeroOrb";
 import { heroTextContainer, heroItem } from "../animations/variants";
 import { FiMail } from "react-icons/fi";
 import { AiOutlineFilePdf } from "react-icons/ai";
+import { useLanguage } from "../context/useLanguage";
 
 export default function Hero() {
+  const { t } = useLanguage();
+
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -17,37 +20,42 @@ export default function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
 
   return (
-    <section ref={heroRef} className="hero hero-cinematic">
+    <section ref={heroRef} id="home" className="hero hero-cinematic">
       <Motion.div className="hero-aurora" style={{ y: bgY }} />
 
-      <Motion.div className="container hero-inner split" style={{ y: textY, opacity }}>
-        <Motion.div variants={heroTextContainer} initial="hidden" animate="visible">
+      <Motion.div
+        className="container hero-inner split"
+        style={{ y: textY, opacity }}
+      >
+        <Motion.div
+          variants={heroTextContainer}
+          initial="hidden"
+          animate="visible"
+        >
           <Motion.h1 className="hero-title" variants={heroItem}>
-            Full Stack Developer | <br />
-            <span className="gradient-text">Web Developer</span>
+            {t.hero.title1} | <br />
+            <span className="gradient-text">{t.hero.title2}</span>
           </Motion.h1>
-          <br />
-          <Motion.p
-            className="hero-subtitle"
-            variants={heroItem}
-          >
-            Berfokus pada pengembangan aplikasi web yang
-            <b> efisien</b>, <b>terstruktur</b>, dan
-            <b> scalable</b>.
-          </Motion.p>
+
           <br />
 
-          <Motion.div
-            className="btn-group"
-            variants={heroItem}
-          >
+          <Motion.p className="hero-subtitle" variants={heroItem}>
+            {t.hero.subtitle}{" "}
+            <b>{t.hero.subtitleBold1}</b>,{" "}
+            <b>{t.hero.subtitleBold2}</b>, dan{" "}
+            <b>{t.hero.subtitleBold3}</b>.
+          </Motion.p>
+
+          <br />
+
+          <Motion.div className="btn-group" variants={heroItem}>
             <div className="cta-actions" style={{ display: "flex", gap: "12px" }}>
               <a
                 href="mailto:mfahreza889@gmail.com"
                 className="btn ghost email-btn"
               >
                 <FiMail className="email-icon" />
-                Email Me
+                {t.hero.email}
               </a>
 
               <a
@@ -55,10 +63,9 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn ghost resume-btn"
-
               >
                 <AiOutlineFilePdf className="resume-icon" />
-                View Resume
+                {t.hero.resume}
               </a>
             </div>
           </Motion.div>

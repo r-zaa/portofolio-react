@@ -1,4 +1,3 @@
-// src/data/skills.jsx
 export const skills = [
   {
     name: "JavaScript",
