@@ -94,6 +94,9 @@ export const translations = {
       problemLabel: "Masalah",
       solutionLabel: "Solusi",
     },
+    contact: {
+      title: "Hubungi Saya",
+    },
 
     language: "ID",
   },
@@ -190,6 +193,9 @@ export const translations = {
       title: "Projects",
       problemLabel: "Problem",
       solutionLabel: "Solution",
+    },
+    contact: {
+      title: "Get in Touch",
     },
     language: "EN",
   },

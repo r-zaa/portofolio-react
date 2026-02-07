@@ -22,6 +22,7 @@ const projectItem = {
 
 export default function Projects() {
   const { t, lang } = useLanguage();
+  console.log('lang project',lang);
   return (
     <section id="projects" className="section">
       <Motion.div

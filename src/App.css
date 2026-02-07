@@ -24,6 +24,7 @@ body,
   --muted: #94a3b8;
   --card: #020617;
   --accent: #38bdf8;
+  --cdiver:linear-gradient(90deg, transparent, #fff, transparent);
   --bnav: rgba(2, 6, 23, 0.6);
   --bgsklis: rgba(255, 255, 255, 0.05);
   --bskils: rgba(255, 255, 255, 0.1);
@@ -42,6 +43,7 @@ body,
   --text: #0f172a;
   --text-o: #ffffff;
   --muted: #000000;
+   --cdiver:linear-gradient(90deg, transparent, #000000, transparent);
   --card: #ffffff;
   --accent: #072f43;
   --bnav: rgba(2, 6, 23, 0.238);
@@ -619,6 +621,101 @@ footer {
   background-color: var(--muted);
   color: var(--text-o);
 }
+
+.contact-cinematic {
+  position: relative;
+  padding: 120px 0 100px;
+  text-align: center;
+  overflow: hidden;
+}
+
+
+.contact-cinematic h3 {
+  position: relative;
+  z-index: 1;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.divider {
+  width: 80px;
+  height: 2px;
+  background: var(--cdiver);
+  margin: 0 auto 40px;
+  opacity: 0.6;
+}
+
+
+
+.icon-wrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+}
+
+.icon-wrapper a {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 26px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+
+.contact-icons-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  padding: 40px 0;
+}
+
+.icon-item {
+  position: relative;
+  display: grid;
+  align-items: center;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  font-size: 26px;
+  color: var(--text);
+  background: var(--bnav);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 90%; /* letakkan di atas ikon */
+  left: 55%;
+  transform: translateX(-50%) translateY(-8px); /* geser ke atas sedikit */
+  font-size: 0.8rem;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 10;
+}
+
+/* tampilkan tooltip saat hover ikon */
+.icon-item:hover .tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-12px);
+}
+
+
 
 
 /* RESPONSIVE */

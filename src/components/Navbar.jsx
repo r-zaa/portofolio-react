@@ -16,7 +16,7 @@ export default function Navbar({ dark, setDark }) {
         <a href="#experience" onClick={() => setMenuOpen(false)}>{t.nav.experience}</a>
         <a href="#skills" onClick={() => setMenuOpen(false)}>{t.nav.skills}</a>
         <a href="#projects" onClick={() => setMenuOpen(false)}>{t.nav.projects}</a>
-        {/* <a href="#contact" onClick={() => setMenuOpen(false)}>{t.nav.contact}</a> */}
+        <a href="#contact" onClick={() => setMenuOpen(false)}>{t.nav.contact}</a>
       </div>
 
       <div className="nav-actions">

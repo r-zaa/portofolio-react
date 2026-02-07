@@ -8,6 +8,7 @@ import { useLanguage } from "../context/useLanguage";
 
 export default function Hero() {
   const { t } = useLanguage();
+// const { t, lang } = useLanguage();
 
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -48,7 +49,7 @@ export default function Hero() {
 
           <br />
 
-          <Motion.div className="btn-group" variants={heroItem}>
+          {/* <Motion.div className="btn-group" variants={heroItem}>
             <div className="cta-actions" style={{ display: "flex", gap: "12px" }}>
               <a
                 href="mailto:mfahreza889@gmail.com"
@@ -59,7 +60,13 @@ export default function Hero() {
               </a>
 
               <a
-                href="./document/cv_dev.pdf"
+                href={
+                  lang == "en"
+                    ? "./document/cv_dev_en.pdf"
+                    : "./document/cv_dev.pdf"
+                }
+
+
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn ghost resume-btn"
@@ -68,7 +75,7 @@ export default function Hero() {
                 {t.hero.resume}
               </a>
             </div>
-          </Motion.div>
+          </Motion.div> */}
         </Motion.div>
 
         <div className="hero-3d">
